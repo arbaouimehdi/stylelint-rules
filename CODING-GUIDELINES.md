@@ -1,6 +1,6 @@
-<h1 align="center">Coding Guidelines</h1>
+<h1>Coding Guidelines</h1>
 
-# General Principles
+## General Principles
 
 > ✅ Use Classes in SCSS for styling elements.
 
@@ -17,7 +17,7 @@
 }
 ```
 
-> ❌ Don't use ID's for styling.
+> ❌ Don't use IDs for styling.
 
 ```scss
 #component {
@@ -42,7 +42,7 @@ h1 {
 }
 ```
 
-# Performance
+## Performance
 
 Overly specific selectors can cause performance issues, it requires a lot of DOM walking and for large documents can cause a significant increase in the layout time.
 
@@ -62,9 +62,9 @@ ul.user-list li span a:hover {
 }
 ```
 
-# Formating & Indentation
+## Formating & Indentation
 
-Remove all trailing white-space for your files
+Remove all trailing white space for your files
 ```json
 "no-eol-whitespace": true
 ```
@@ -75,9 +75,9 @@ Don't mix spaces with tabs for indentation
 ```
 
 
-# Commenting
+## Commenting
 
-- Separate your code into logical section using standard comment blocks.
+- Separate your code into a logical section using standard comment blocks.
 - Leave one clear line under your section comments.
 
 > ✅ Do
@@ -104,9 +104,9 @@ Don't mix spaces with tabs for indentation
 }
 ```
 
-# Spacing
+## Spacing
 
-CSS rules should be comma separated but live on new lines
+CSS rules should be comma-separated but live on new lines
 ```json
 "selector-list-comma-newline-after": "always"
 ```
@@ -117,9 +117,9 @@ Include a single space before the opening brace of a rule-set
 - Include a single space after the colon of a declaration.
 - include a semi-colon at the end of every declaration in a declaration block
 - include a space after each comma in comma-separated property or function values.
-- CSS Blocks should be spearated by a single clear line
+- CSS Blocks should be separated by a single clear line
 
-# Quotes
+## Quotes
 
 > ✅ Always use double quotes, quote attribute values in selectors
 
@@ -139,7 +139,7 @@ input[type="checkbox"] {
 }
 ```
 
-# When Declaring Values
+## When Declaring Values
 
 - Use lower-case and shorthand hex values
 - use unit-less line-height values
@@ -178,7 +178,7 @@ input[type="checkbox"] {
 }
 ```
 
-# Declaration order
+## Declaration order
 
 > The goal is to understand the essence of the styles by reading few declarations. Most of the time, the essence is how the element is laid out and its size is determined. A proper ordering of rules allows to scan the declaration block for properties quickly, and this is the order that should be followed:
 
@@ -268,7 +268,7 @@ input[type="checkbox"] {
 }
 ```
 
-# Pseudo Elements and Classes
+## Pseudo Elements and Classes
 
 Pseudo Elements and classes are very different things, as is the syntax used to declare them:
 
@@ -284,7 +284,7 @@ Pseudo Elements and classes are very different things, as is the syntax used to 
 }
 ```
 
-> ✅ Declare pseudo **elements** with a a double colon
+> ✅ Declare pseudo **elements** with a double colon
 
 ```scss
 .component::before {
@@ -304,7 +304,7 @@ Pseudo Elements and classes are very different things, as is the syntax used to 
 }
 ```
 
-# Units
+## Units
 
 > ✅ Do
 
@@ -312,22 +312,22 @@ Pseudo Elements and classes are very different things, as is the syntax used to 
   - Positioning: `top`, `right`, `bottom`, `left`
   - Dimensions: `width`, `height`, `margin`, `padding`
   - Font Size
-- Use `px` units as primary unit type for the following properties
+- Use `px` units as a primary unit type for the following properties
   - Border widths: `border: 1px solid #bada55;`
-- Line-height should be kept unti-less. If you find you are using a line-height with a set unit type, try to thing of alternative ways to achieve the same outcome. If it's a unique case which requires a specific `px` or `rem` unit, outline the reasoning with comments so that others are aware of its purpose.
+- Line-height should be kept unit-less. If you find you are using a line height with a set unit type, try to think of alternative ways to achieve the same outcome. If it's a unique case that requires a specific `px` or `rem` unit, outline the reasoning with comments so that others are aware of its purpose.
 
 > ❌ Don't
 
 - Avoid all use of magic numbers. Rethink the problem (`margin-top: 37px`)
 
-# Nesting
+## Nesting
 
-Nesting is handy, sometimes, but will conflict with our **Specifity** and **Performance** guidelines.
+Nesting is handy, sometimes, but will conflict with our **Specificity** and **Performance** guidelines.
 
-As we follow conventions and thoughts from widely accepted methodologie such as BEM, the use of the suffix can help immensely though.
+As we follow conventions and thoughts from widely accepted methodologies such as BEM, the use of the suffix can help immensely though.
 
 - Just because you can, doesn't mean you should.
-- Watch you output, be mindful of Specifity and Performance described in this document.
+- Watch your output, be mindful of Specificity and Performance described in this document.
 
 > ✅ Aim for maximum depth of just 1 nested rule
 
@@ -399,12 +399,12 @@ At its worst, this produces:
 }
 ```
 
-# @extends or @include
+## @extends or @include
 
-- Excessive use of `@include` can cause unecessary bloat to your stylesheet, but gzip should help with that
-- Excessive use of `@extend` can create a large selector blocks (not helpful in web inspector) and hoisting of your selector can cause override and inheritance issues.
+- Excessive use of `@include` can cause unnecessary bloat to your stylesheet, but gzip should help with that
+- Excessive use of `@extend` can create a large selector block (not helpful in web inspector) and hoisting of your selector can cause override and inheritance issues.
 
-> ✅ We advise to `@include` over `@extend` generally, but use common sense. In situations where it's better to `@extend` it's safer to do so on a placeholder selector
+> ✅ We advise to `@include` over `@extend` generally but use common sense. In situations where it's better to `@extend` it's safer to do so on a placeholder selector
 
 > ✅ Make use of placeholder selectors to separate repeated local styles
 
@@ -424,7 +424,7 @@ At its worst, this produces:
 }
 ```
 
-# Components
+## Components
 
 Syntax: `<componentName>[--modifierName|-descendantName]`
 
@@ -436,7 +436,7 @@ Component Driven development offers several benefits when reading and writing HT
 - It keeps the specificity of selectors low.
 - It helps to decouple presentation semantics from document semantics.
 
-You can thing of components as custom elements that enclose specific semantics, styling, and behaviour.
+You can think of components as custom elements that enclose specific semantics, styling, and behavior.
 
 > ❌ Do not choose a class name base on its visual presentation or its content
 
@@ -448,9 +448,9 @@ You can thing of components as custom elements that enclose specific semantics, 
 - componentName.is-stateOfComponent (eg. `dropdown.is-active`)
 - u-utilityName (eg. `u-textTruncate`)
 
-## ComponentName
+### ComponentName
 
-The component's name must be written in camel case. Use class names as short as possible but as long as necessary.
+The component's name must be written in the camel case. Use class names as short as possible but as long as necessary.
 
 - Example `.nav` not `.navigation`
 - Example `.button` not `.btn`
@@ -465,7 +465,7 @@ The component's name must be written in camel case. Use class names as short as 
 <article class="myComponent">...</article>
 ```
 
-## componentName--modifierName
+### componentName--modifierName
 
 A component modifier is a class that modifies the presentation of the base component in some form. Modifier names must be written in camel case and be separated from the component name by two hyphens. The class should be included in the HTML in addition to the base component class.
 
@@ -483,9 +483,9 @@ A component modifier is a class that modifies the presentation of the base compo
 <button class="button button--primary">...</button>
 ```
 
-## componentName-descendantName
+### componentName-descendantName
 
-A component descendant is a class this is attached to a descendant node of a component. It's reponsible for applying presentation directly to the descendant on behalf of a particular component. Descendant names must be written in camel case.
+A component descendant is a class this is attached to a descendant node of a component. It's responsible for applying presentation directly to the descendant on behalf of a particular component. Descendant names must be written in the camel case.
 
 ```html
 <article class="tweet">
@@ -500,7 +500,7 @@ A component descendant is a class this is attached to a descendant node of a com
 
 You might notice that `tweet-avatar`, despite being a descendant of `tweet-header` does not have the class of `tweet-header-avatar`. WHY? because it doesn't necessarily **have** to live there. It could be adjacent to `tweet-header` and function the same way. Therefore, you should only prepend a descendant with its parent if must live there. Strive to keep class names as short as possible, but as long as necessary.
 
-When building a component, you'll often run into the situation where you have a list, group or sipmly require a container for some descendants. In this case, it's much better to follow a pattern of pluralising the container and having each descendant be singular. This keeps the relationship clear between descendant levels.
+When building a component, you'll often run into the situation where you have a list, group or simply require a container for some descendants. In this case, it's much better to follow a pattern of pluralizing the container and having each descendant be singular. This keeps the relationship clear between descendant levels.
 
 > ✅ Do
 
@@ -538,7 +538,7 @@ When building a component, you'll often run into the situation where you have a 
 </ul>
 ```
 
-## componentName.is-stateOfComponent
+### componentName.is-stateOfComponent
 
 Use `is-stateName` for state-based modifications of components. The state name must be Camel case. Never style these classes directly; they should always be used as an adjoining class.
 
@@ -558,28 +558,28 @@ Use `is-stateName` for state-based modifications of components. The state name m
 }
 ```
 
-# Utilities
+## Utilities
 
-Utility classes are low-level structural and positional traits. Utilities can be applied directly to any element; multiple utilities can be used together; and utilities can be used alngside component classes.
+Utility classes are low-level structural and positional traits. Utilities can be applied directly to any element; multiple utilities can be used together, and utilities can be used alongside component classes.
 
-Utility classes should be useful sparingly, lean towards component level styling to make for as reusable HTML patterns as possible.
+Utility classes should be used sparingly, lean towards component level styling to make for as reusable HTML patterns as possible.
 
-## u-utilityName
+### u-utilityName
 
 Syntax: `u-<utilityName>`
-Utilties must use a camel case name, prefixed with a `u` namespace.
+Utilities must use a camel case name, prefixed with a `u` namespace.
 
-# Variables and Mixins
+## Variables and Mixins
 
 Variables and Mixins should follow similar naming conventions.
 
-## Variables
+### Variables
 
 Syntax: `[<componentName>[--modifierName][-descendantName]-]<propertyName>-<variableName>[--<modifierName>]`
 
 Variables should be named as such, things that can change over time.
 
-Variables should also follow our component naming convention to show context and be in camelCase. If the variable is a global, generic variable, the property name should be prefixed first, followed by the variant and or modifier name for clearer understanding of use.
+Variables should also follow our component naming convention to show context and be in camelCase. If the variable is a global, generic variable, the property name should be prefixed first, followed by the variant and or modifier name for a clearer understanding of use.
 
 > ✅ Abstract your variable names
 
@@ -590,7 +590,7 @@ $fontSize--large: 2rem;
 $lineHeight-small: 1.2;
 ```
 
-❌ Name you variables after the color value
+❌ Name your variables after the color value
 
 ```scss
 $zirotoheroBlue: #00abc9;
@@ -602,7 +602,7 @@ $color-lightBlue: #eeff00;
 
 Micro apps must base their local variables on the global variables primarily. You may add your own specific variables as required if no global variable is available.
 
-For portability, your component should declare it's own set of variables inside it's own settings partial, inside the settings folder.
+For portability, your component should declare its own set of variables inside its own settings partial, inside the settings folder.
 
 If your variable is scoped to your component, it should be namespaced as such following component naming conventions.
 
@@ -695,10 +695,10 @@ h3 {
 }
 ```
 
-**Every variable used in the core architecture must be based off the global
+**Every variable used in the core architecture must be based on the global
 variables.**
 
-## Colors
+### Colors
 
 Use the globally available colors.
 A component shouldn't really have a need for a *new* color.
@@ -722,7 +722,7 @@ Use the z-index scale under global settings.
 
 ## Font Weight
 
-Never declare a new font weight,
+Never declare a new font-weight,
 only use the available font settings. e.g.
 
 ```css
@@ -730,9 +730,9 @@ fontWeight("light");
 fontWeight("semibold");
 ```
 
-## Line Height
+### Line Height
 
-We provides a line height scale. This should be used for blocks of text. e.g.
+We provide a line-height scale. This should be used for blocks of text. e.g.
 
 ```css
 lineHeight("smallest");
@@ -748,9 +748,9 @@ Alternatively, when using line height to vertically center a single line of text
 }
 ```
 
-## Animations
+### Animations
 
-Animation delays, durations and easing should be taken from the global framework
+Animation delays, durations, and easing should be taken from the global framework
 
 ## Mixins
 
