@@ -46,4 +46,4 @@ Use `px` units as a primary unit type for the following properties
 - `is-stateOfComponent` should be used as an adjoining class
 - Variables should be name such `[<componentName>[--modifierName][-descendantName]-]<propertyName>-<variableName>[--<modifierName>]`
 
-Check the Coding [Guidelines](https://github.com/freemh/stylelint-rules/blob/main/.stylelintrc) that cover a thorough description of all the rules, plus the rules file [.stylelintrc](https://github.com/freemh/stylelint-rules/blob/main/.stylelintrc)
+## Check the Coding [Guidelines](https://github.com/freemh/stylelint-rules/blob/main/.stylelintrc) that cover a thorough description of all the rules, plus the rules file [.stylelintrc](https://github.com/freemh/stylelint-rules/blob/main/.stylelintrc)
